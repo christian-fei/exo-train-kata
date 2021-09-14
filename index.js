@@ -13,7 +13,7 @@ module.exports = class Train {
         this.trainRepresentation = trainRepresentation
     }
 
-    toString() {
+    toASCII() {
         return this.trainRepresentation
             .split('')
             .map((car, index) => {
