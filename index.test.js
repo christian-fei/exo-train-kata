@@ -16,3 +16,7 @@ test('input locomotive and passenger car, "HP"', t => {
 test('input locomotive and two passenger cars, "HPP"', t => {
     t.is(exoTrain('HPP'), '<HHHH::|OOOO|::|OOOO|')
 })
+
+test('input locomotive and two passenger cars with restaurant car, "HPRP"', t => {
+    t.is(exoTrain('HPRP'), '<HHHH::|OOOO|::|hThT|::|OOOO|')
+})
