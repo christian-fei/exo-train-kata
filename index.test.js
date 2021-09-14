@@ -1,22 +1,22 @@
 const test = require('ava')
-const exoTrain = require('.')
+const trainToASCII = require('.')
 
 test('empty input', t => {
-    t.is(exoTrain(''), '')
+    t.is(trainToASCII(''), '')
 })
 
 test('input locomotive, "H"', t => {
-    t.is(exoTrain('H'), '<HHHH')
+    t.is(trainToASCII('H'), '<HHHH')
 })
 
 test('input locomotive and passenger car, "HP"', t => {
-    t.is(exoTrain('HP'), '<HHHH::|OOOO|')
+    t.is(trainToASCII('HP'), '<HHHH::|OOOO|')
 })
 
 test('input locomotive and two passenger cars, "HPP"', t => {
-    t.is(exoTrain('HPP'), '<HHHH::|OOOO|::|OOOO|')
+    t.is(trainToASCII('HPP'), '<HHHH::|OOOO|::|OOOO|')
 })
 
-test('input locomotive and two passenger cars with restaurant car, "HPRP"', t => {
-    t.is(exoTrain('HPRP'), '<HHHH::|OOOO|::|hThT|::|OOOO|')
+test('locomotive at the end, "HPRPH"', t => {
+    t.is(trainToASCII('HPRPH'), '<HHHH::|OOOO|::|hThT|::|OOOO|::HHHH>')
 })
