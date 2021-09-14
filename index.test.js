@@ -26,3 +26,11 @@ test('locomotive at the end, "HPRPH"', t => {
     const train = new Train('HPRPH')
     t.is(train.toString(), '<HHHH::|OOOO|::|hThT|::|OOOO|::HHHH>')
 })
+
+test('detach head and tail of train, "HPRPH" -> "HPRP"', t => {
+    const train = new Train('HPRPH')
+    train.detachEnd()
+    t.is(train.toString(), '<HHHH::|OOOO|::|hThT|::|OOOO|')
+    train.detachHead()
+    t.is(train.toString(), '|OOOO|::|hThT|::|OOOO|')
+})

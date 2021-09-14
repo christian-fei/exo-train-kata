@@ -9,12 +9,12 @@ const REPRESENTATIONS = {
 }
 
 module.exports = class Train {
-    constructor(stringRepresentation = '') {
-        this.stringRepresentation = stringRepresentation
+    constructor(trainRepresentation = '') {
+        this.trainRepresentation = trainRepresentation
     }
 
     toString() {
-        return this.stringRepresentation
+        return this.trainRepresentation
             .split('')
             .map((car, index) => {
                 const isHead = (index === 0)
@@ -25,4 +25,11 @@ module.exports = class Train {
 
     }
 
+    detachHead () {
+        this.trainRepresentation = this.trainRepresentation.substring(1, this.trainRepresentation.length)
+    }
+
+    detachEnd () {
+        this.trainRepresentation = this.trainRepresentation.substring(0, this.trainRepresentation.length - 1)
+    }
 }
